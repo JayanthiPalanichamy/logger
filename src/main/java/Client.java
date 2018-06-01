@@ -6,9 +6,9 @@ public class Client {
             return numerator / denominator;
         } catch (ArithmeticException e) {
             Logger logger = new Logger();
-            logger.errorLog("Divide By Zero",DestinationType.CONSOLE);
-            logger.errorLog("Divide by Zero",DestinationType.FILE);
-            logger.errorLog("Divide By Zero",DestinationType.DATABASE);
+            logger.logError("Divide By Zero", DestinationType.CONSOLE);
+            logger.logError("Divide by Zero", DestinationType.FILE);
+            logger.logError("Divide By Zero", DestinationType.DATABASE);
         }
         return 0;
     }

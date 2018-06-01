@@ -2,7 +2,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class FileDestination implements Loggable {
+public class FileDestination implements Destination {
     @Override
     public void logMessage(String message) {
         File file = new File("ErrorMessage.txt");
@@ -12,8 +12,7 @@ public class FileDestination implements Loggable {
             fr.write(message);
         } catch (IOException e) {
             e.printStackTrace();
-        }finally{
-            //close resources
+        } finally {
             try {
                 fr.close();
             } catch (IOException e) {

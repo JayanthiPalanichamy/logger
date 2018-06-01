@@ -1,3 +1,3 @@
 public enum DestinationType {
-    CONSOLE,FILE,DATABASE;
+    CONSOLE, FILE, DATABASE;
 }
