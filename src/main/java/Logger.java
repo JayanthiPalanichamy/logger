@@ -1,31 +1,18 @@
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+
 
 public class Logger {
-    public boolean errorLog(String message, boolean logOnConsole, boolean logOnFile, boolean logOnDatabase) {
-        if (logOnConsole) {
-            System.out.println(message);
+    public void errorLog(String message, DestinationType destinationType) {
+    switch (destinationType) {
+        case CONSOLE: {
+            new ConsoleDestination().logMessage(message);
+            break;
         }
-        if (logOnFile) {
-            File file = new File("ErrorMessage.txt");
-            FileWriter fr = null;
-            try {
-                fr = new FileWriter(file);
-                fr.write(message);
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    fr.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+        case FILE: {
+            new FileDestination().logMessage(message);
         }
-        if(logOnDatabase){
-            //logging in database
+        case DATABASE:{
+            new DatabaseDestination().logMessage(message);
         }
-        return true;
+    }
     }
 }

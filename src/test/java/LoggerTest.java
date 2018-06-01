@@ -21,14 +21,14 @@ public class LoggerTest {
     }
 
     @Test
-    public void returnErrorLogWhenDividedByZero() {
+    public void returnErrorLogOnConsoleWhenDividedByZero() {
         Client client = new Client();
         client.divide(1, 0);
         assertEquals("Divide By Zero\n", outContent.toString());
     }
 
     @Test
-    public void loggerReturnsByWritingInFile() {
+    public void returnErrorLogOnFileWhenDividedByZero() {
         Client client = new Client();
         client.divide(1, 0);
     }
