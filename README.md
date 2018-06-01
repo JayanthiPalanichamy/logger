@@ -1,0 +1,1 @@
+To build a logger method , which logs the warning message and error message to the console.
