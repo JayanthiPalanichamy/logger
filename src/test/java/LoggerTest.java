@@ -19,17 +19,19 @@ public class LoggerTest {
     public void restoreStreams() {
         System.setOut(System.out);
     }
+
     @Test
     public void returnErrorLogWhenDividedByZero() {
         Client client = new Client();
-        client.divide(1,0);
+        client.divide(1, 0);
         assertEquals("Divide By Zero\n", outContent.toString());
     }
 
     @Test
     public void loggerReturnsByWritingInFile() {
         Client client = new Client();
-        client.divide(1,0);
-         outContent.toString();
+        client.divide(1, 0);
     }
+
+
 }
